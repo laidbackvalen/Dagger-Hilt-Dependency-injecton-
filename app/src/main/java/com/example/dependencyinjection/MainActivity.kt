@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.dependencyinjection.dependencyinjection.Computer
 import com.example.dependencyinjection.dependencyinjection.interfaces.MainOne
+import com.example.dependencyinjection.dependencyinjection.interfaces.MainTwo
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var mainOne: MainOne
+
+    @Inject
+    lateinit var mainTwo: MainTwo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,5 +36,7 @@ class MainActivity : AppCompatActivity() {
         computer.getComputer()
 
         mainOne.demoOne()
+
+        mainTwo.demoTwo()
     }
 }
